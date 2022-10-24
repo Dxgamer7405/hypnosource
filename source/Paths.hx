@@ -14,7 +14,6 @@ import openfl.media.Sound;
 import openfl.system.System;
 import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;
-import sys.FileSystem;
 import sys.io.File;
 
 using StringTools;
@@ -107,7 +106,7 @@ class Paths
 		for (key in FlxG.bitmap._cache.keys())
 		{
 			var obj = FlxG.bitmap._cache.get(key);
-			if (obj != null && !currentTrackedAssets.exists(key) && !dumpExclusions.contains(key))
+			if (obj != null && !currentTrackedAssets.exists(key))
 			{
 				openfl.Assets.cache.removeBitmapData(key);
 				FlxG.bitmap._cache.remove(key);
@@ -135,7 +134,7 @@ class Paths
 			// do dumbshit
 			return FlxG.bitmap.add(path, true, path);
 		} else {
-			if (FileSystem.exists(path))
+			if (Assets.exists(path))
 			{
 				if (!currentTrackedAssets.exists(key))
 				{
@@ -210,7 +209,7 @@ class Paths
 
 	static function getPreloadPath(file:String) {
 		var returnPath:String = '$currentLevel/$file';
-		if (!FileSystem.exists(returnPath))
+		if (!Assets.exists(returnPath))
 			returnPath = CoolUtil.swapSpaceDash(returnPath);
 		return returnPath;
 	}
