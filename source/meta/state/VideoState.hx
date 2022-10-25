@@ -1,7 +1,6 @@
 package meta.state;
 
 import vlc.MP4Handler;
-import sys.FileSystem;
 import meta.MusicBeat.MusicBeatState;
 
 class VideoState extends MusicBeatState {
@@ -13,7 +12,7 @@ class VideoState extends MusicBeatState {
 
         #if VIDEOS_ALLOWED
         var filepath:String = Paths.video(videoName);
-        if (!FileSystem.exists(filepath)) {
+        if (!Assets.exists(filepath)) {
             close();
             return;
         }

@@ -68,7 +68,7 @@ class CoolUtil
 
 	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/images'):Array<String>
 	{
-		//
+		#if windows
 		var libraryArray:Array<String> = [];
 		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
 
@@ -78,6 +78,7 @@ class CoolUtil
 				libraryArray.push(folder);
 		}
 		trace(libraryArray);
+    #end
 
 		return libraryArray;
 	}

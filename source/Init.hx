@@ -7,7 +7,6 @@ import lime._internal.backend.native.NativeCFFI;
 import meta.CoolUtil;
 import meta.InfoHud;
 import meta.data.Highscore;
-import meta.data.dependency.Discord;
 import meta.state.*;
 import meta.state.charting.*;
 import meta.state.menus.PreloadState;

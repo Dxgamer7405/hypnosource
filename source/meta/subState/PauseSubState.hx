@@ -1,6 +1,5 @@
 package meta.subState;
 
-import sys.FileSystem;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
@@ -61,7 +60,7 @@ class PauseSubState extends MusicBeatSubState
 		pausePortraitLeft = new FlxSprite(portraitDistance * -1, 0);
 		pausePortraitLeft.loadGraphic(Paths.image('pause/' + PlayState.SONG.song.toLowerCase()+ '/left' + PlayState.instance.pausePortraitPrefix[0]));
 		pausePortraitLeft.scrollFactor.set();
-		if (!FileSystem.exists(Paths.getPath('pause/' + PlayState.SONG.song.toLowerCase()+ '/left' + PlayState.instance.pausePortraitPrefix[0] + '.png', IMAGE))) add(pausePortraitLeft);
+		if (!Assets.exists(Paths.getPath('pause/' + PlayState.SONG.song.toLowerCase()+ '/left' + PlayState.instance.pausePortraitPrefix[0] + '.png', IMAGE))) add(pausePortraitLeft);
 		pausePortraitLeft.x = portraitDistance * -1;
 		pausePortraitLeft.alpha = 0;
 		if (PlayState.instance.pausePortraitRevealed[0] == false) pausePortraitLeft.color = FlxColor.BLACK;
@@ -69,7 +68,7 @@ class PauseSubState extends MusicBeatSubState
 		pausePortraitRight = new FlxSprite((FlxG.width / 2) + portraitDistance, 0);
 		pausePortraitRight.loadGraphic(Paths.image('pause/' + PlayState.SONG.song.toLowerCase()+ '/right' + PlayState.instance.pausePortraitPrefix[1]));
 		pausePortraitRight.scrollFactor.set();
-		if (!FileSystem.exists(Paths.getPath('pause/' + PlayState.SONG.song.toLowerCase()+ '/right' + PlayState.instance.pausePortraitPrefix[1] + '.png', IMAGE))) add(pausePortraitRight);
+		if (!Assets.exists(Paths.getPath('pause/' + PlayState.SONG.song.toLowerCase()+ '/right' + PlayState.instance.pausePortraitPrefix[1] + '.png', IMAGE))) add(pausePortraitRight);
 		pausePortraitRight.x = (FlxG.width / 2) + portraitDistance;
 		pausePortraitRight.alpha = 0;
 		if (PlayState.instance.pausePortraitRevealed[1] == false) pausePortraitRight.color = FlxColor.BLACK;

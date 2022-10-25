@@ -27,7 +27,6 @@ import meta.state.PlayState;
 import openfl.display.GraphicsShader;
 import openfl.display.Shader;
 import openfl.filters.ShaderFilter;
-import sys.FileSystem;
 import sys.io.File;
 
 using StringTools;

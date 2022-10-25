@@ -304,7 +304,8 @@ class Events {
 	public static function obtainEvents() {
 		loadedModules.clear();
 		eventList = [];
-		var tempEventArray:Array<String> = FileSystem.readDirectory('assets/events');
+		var list = Assets.list();
+		var tempEventArray = list.filter(text -> text.contains('assets/events'));
 		//
 		var futureEvents:Array<String> = [];
 		var futureSubEvents:Array<String> = [];

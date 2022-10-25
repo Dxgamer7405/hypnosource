@@ -27,14 +27,13 @@ import meta.MusicBeat.MusicBeatState;
 import meta.data.Conductor;
 import meta.data.Highscore;
 import meta.data.Song;
-import meta.data.dependency.Discord;
+
 import meta.data.font.Alphabet;
 import meta.state.menus.FreeplayState;
 import meta.subState.UnlockSubstate.LockSprite;
 import openfl.display.GraphicsShader;
 import openfl.events.MouseEvent;
 import openfl.filters.ShaderFilter;
-import sys.FileSystem;
 import sys.io.File;
 import sys.thread.Mutex;
 import sys.thread.Thread;
@@ -308,7 +307,7 @@ class ShopState extends MusicBeatState
 		for (i in folderList)
 		{
 			trace('found folder: ' + i);
-			if (FileSystem.exists(Paths.getPath('images/shop/${i}/${i}.json', TEXT)))
+			if (Assets.exists(Paths.getPath('images/shop/${i}/${i}.json', TEXT)))
 			{
 				var rawJson = File.getContent(Paths.getPath('images/shop/${i}/${i}.json', TEXT));
 				var swagShit:ShopItem = cast Json.parse(rawJson).itemDetail;
@@ -611,7 +610,7 @@ class ShopState extends MusicBeatState
 		{
 			var old:Bool = j == 0 ? true : false;
 			var icon:String = 'gf';
-			var chartExists:Bool = FileSystem.exists(Paths.songJson(i, i + '-hard', old, library));
+			var chartExists:Bool = Assets.exists(Paths.songJson(i, i + '-hard', old, library));
 			if (library != null)
 				chartExists = openfl.utils.Assets.exists(Paths.songJson(i, i + '-hard', old, library), TEXT);
 			if (chartExists)
@@ -1578,7 +1577,7 @@ class ShopState extends MusicBeatState
 						if (portrait != null && portrait != curPortrait)
 						{
 							//  get the new portrait
-							if (!FileSystem.exists(Paths.getPath('images/menus/freeplay/$portrait.png', IMAGE)))
+							if (!Assets.exists(Paths.getPath('images/menus/freeplay/$portrait.png', IMAGE)))
 								portrait = 'unknown';
 							mutex.acquire();
 							switchingPortraits = true;

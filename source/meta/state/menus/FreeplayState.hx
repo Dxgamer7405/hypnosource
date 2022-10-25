@@ -17,10 +17,9 @@ import lime.utils.Assets;
 import meta.MusicBeat.MusicBeatState;
 import meta.data.*;
 import meta.data.Song.SwagSong;
-import meta.data.dependency.Discord;
+
 import meta.data.font.Alphabet;
 import openfl.media.Sound;
-import sys.FileSystem;
 import sys.thread.Mutex;
 import sys.thread.Thread;
 
@@ -73,7 +72,7 @@ class FreeplayState extends MusicBeatState
 				for (j in 0...2) {
 					var old:Bool = j == 0 ? true : false;
 					var icon:String = 'gf';
-					var chartExists:Bool = FileSystem.exists(Paths.songJson(i, i, old));
+					var chartExists:Bool = Assets.exists(Paths.songJson(i, i, old));
 					if (chartExists)
 					{
 						var castSong:SwagSong = Song.loadFromJson(i, i, old);
@@ -148,8 +147,8 @@ class FreeplayState extends MusicBeatState
 		///*
 		var coolDifficultyArray = [];
 		for (i in CoolUtil.difficultyArray)
-			if (FileSystem.exists(Paths.songJson(songName, songName + '-' + i, old))
-				|| (FileSystem.exists(Paths.songJson(songName, songName, old)) && i == "NORMAL"))
+			if (Assets.exists(Paths.songJson(songName, songName + '-' + i, old))
+				|| (Assets.exists(Paths.songJson(songName, songName, old)) && i == "NORMAL"))
 				coolDifficultyArray.push(i);
 
 		if (coolDifficultyArray.length > 0)

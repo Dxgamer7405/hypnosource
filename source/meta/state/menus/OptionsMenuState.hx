@@ -15,7 +15,7 @@ import flixel.util.FlxTimer;
 import gameObjects.userInterface.menu.Checkmark;
 import gameObjects.userInterface.menu.Selector;
 import meta.MusicBeat.MusicBeatState;
-import meta.data.dependency.Discord;
+
 import meta.data.dependency.FNFSprite;
 import meta.data.font.Alphabet;
 

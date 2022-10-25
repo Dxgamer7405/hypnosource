@@ -15,7 +15,7 @@ import lime.app.Application;
 import meta.*;
 import meta.data.PlayerSettings;
 import meta.data.ScriptHandler;
-import meta.data.dependency.Discord;
+
 import meta.data.dependency.FNFTransition;
 import meta.data.dependency.FNFUIState;
 import openfl.Assets;

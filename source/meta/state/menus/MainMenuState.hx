@@ -20,7 +20,7 @@ import flixel.util.FlxTimer;
 import meta.MusicBeat.MusicBeatState;
 import meta.data.Highscore;
 import meta.data.Song;
-import meta.data.dependency.Discord;
+
 import meta.data.font.Alphabet;
 import meta.subState.UnlockSubstate;
 
